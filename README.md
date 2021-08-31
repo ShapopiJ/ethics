@@ -8,7 +8,7 @@ This is a page that is to request the Unique ID and display information about th
 ## Feedback from DECs
 This is a page that will ask the Unique ID and pwd from the DEC. They will then give feedback to the applicant.
 
-* [admin_status_request](FormScripts/admin_status_request.php): Place this as an XYZ snippet and use a short code to add it to the page you would like.
+* [admin_status_request](FormScripts/admin_status_update.php): Place this as an XYZ snippet and use a short code to add it to the page you would like.
 
 ## Edit entries
 After you have set up the easy passthrough plugin by gravity perks:
