@@ -22,6 +22,10 @@ function get_feedback($feedback) {
                     padding: 10px 10px 10px 10px;
                     border-radius: 5px;
                     color: white;';
+    $urec = 'background-color: blue;
+                    padding: 10px 10px 10px 10px;
+                    border-radius: 5px;
+                    color: white;';
         
     /* Take a feedback entry and output some html for the applicant showing the status */
     if (!empty($feedback)) {
@@ -35,8 +39,10 @@ function get_feedback($feedback) {
         
         if ($status == 'Approved'){
                         $style = $approved;
-                    } elseif ($status == 'Disapproved' ){
+                    } elseif ($status == 'Declined' ){
                         $style = $rejected;
+                    } elseif ($status == 'Forwarded to UREC') {
+                        $style = $urec;
                     } else {
                         $style = $concern;
                     }

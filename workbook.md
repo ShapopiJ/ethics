@@ -36,3 +36,13 @@ This highlights work done on this project.
 * I changed back to a simple redirect because this one does not add default css.
 * I simply password protected the admin form page.
 * Added numbering functionality to the feedback area.
+
+## Date 03/09/2021
+
+* Change Campus and School to one list of DEC's
+* Forwarded to UREC
+* I must fix the no duplicates functionality:
+    - Someone can just got to dec-admin page and enter the details of a review that already exists.
+        * So I turned on "No Duplicates for Unique ID"
+    - This however does not allow easypassthrough to work anymore.
+    - Perhaps you must validate the duplication in the easypassthrough code snippet (gpedit)
