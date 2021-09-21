@@ -52,5 +52,7 @@ This highlights work done on this project.
 [x] Fix the field mapping for edits in easy passthrough. They are not properly matched.
 * Now properly matching
 
+## Date 13/09/2021
+
 # Tasks
 * Fix no duplicate functionality. Problem described in 03/09/2021
