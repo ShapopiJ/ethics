@@ -34,6 +34,8 @@ function get_feedback($feedback) {
         $fname = rgar($feedback, '2.3');
         $lname = rgar($feedback, '2.6');
         $feedback_text = rgar($feedback, '5');
+        $edit_entry = rgar($feedback, '6');
+        $edit_entry = trim($edit_entry);
 
         //some styles
         
@@ -51,7 +53,10 @@ function get_feedback($feedback) {
         echo '<h2> Your application was handled by '.$title. ' '.$fname. ' '.$lname . '</h2></br>';
         echo '<h3>Status: <span style="'.$style.'">'.$status.'</span></br>';
         echo '</br><h4> Here is your feedback:</h4>';
-        echo '<p style="border-style: solid;">'.$feedback_text.'</p>';
+        echo '<p style="border-style: solid;">'.$feedback_text.'</p></br></br>';
+        if ($edit_entry!== ''){
+            echo '<h1>You have been requested to edit your form. Please use the following password to edit the form: '.$edit_entry.' </h1>';
+        }
         return;
     } else {
         $style = $nofeedback;
@@ -68,6 +73,7 @@ $failure = false;
 if ( isset($_POST['email']) && isset($_POST['unique_id'])) {
     if (strlen($_POST['email']) < 1) {
         $failure ="Please enter a valid email address";
+        unset($_POST);
     } else {
         $email = $_POST['email'];
         $id = $_POST['unique_id'];
@@ -87,7 +93,7 @@ if ( isset($_POST['email']) && isset($_POST['unique_id'])) {
         
         if (empty($entry)) {
             //If email doesn't exist sent a message.
-            echo('<h1>Please check your email again. That entry does not exist</h1>');
+            $failure ="Please check your ID again. That entry does not exist";
             unset($_POST);
         } else {
             //Get Name
@@ -103,12 +109,19 @@ if ( isset($_POST['email']) && isset($_POST['unique_id'])) {
             
         }
         if (isset($_POST['edit'])){
-            echo('<h3>Redirecting...: </h3></br></br>');
             
-            echo('<script> window.location.href= "'.$redirect.'";</script>');
-            //echo('<a href='.$redirect.'>HERE</a>');
-            exit;
-        } else{
+            //If the password matches the password given by the DEC redirect the applicant.
+            $admin_pwd = rgar($feedback, '6');
+            if ($_POST['pwd_edit'] == $admin_pwd){
+                echo('<h3>Redirecting...</h3></br></br>');
+                echo('<script> window.location.href= "'.$redirect.'";</script>');
+                //echo('<a href='.$redirect.'>HERE</a>');
+                exit;
+            } else {
+                $failure = "The DEC responsible has not yet given you permission to edit this form";
+                unset($_POST);
+            }
+        } elseif (isset($_POST)){ //This elseif only makes sure that $_POST is still set so that it can write this information.
         
         echo('<h1> Welcome '.htmlentities($title).' '.htmlentities($name).' '.htmlentities($lname).'</h1>');
         details($research_title, $id_no);
@@ -118,12 +131,17 @@ if ( isset($_POST['email']) && isset($_POST['unique_id'])) {
     }
 }
 if (!isset($_POST['email'])) {
+    if (isset($failure)) {
+        echo('<h2 style="color: red;">'.$failure.'</h2>');
+    }
     echo('<h1>Please enter your information</h1>');
     echo('<form method="POST">');
     echo('<label for="email">Email</label>');
-    echo('<input type="text" name="email" id="email">');
+    echo('<input type="text" name="email" id="email"></br>');
     echo('<label for="unique_id">Unique ID</label>');
-    echo('<input type="text" name="unique_id" id="unique_id"><br/>');
+    echo('<input type="text" name="unique_id" id="unique_id"></br>');
+    echo('<label for="pwd_edit">Password for Editing</label>');
+    echo('<input type="text" name="pwd_edit" id="pwd_edit"></br>');
     echo('<input type="submit" value="Search">');
     echo('<input type="submit" name="edit" value="Edit">');
     echo('</form>');

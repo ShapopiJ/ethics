@@ -64,7 +64,7 @@ This highlights work done on this project.
 [x] What if collaborators are external (we only need to indicate the institution and country may be)
 * Added Institution and Country.
 
-[ ] I notice that after submission; the system can again give you option to edit when you want to check status. How will we control this?
+[x] I notice that after submission; the system can again give you option to edit when you want to check status. How will we control this?
 
 Proposed solution:
 
@@ -80,11 +80,13 @@ Proposed solution:
 
 [x] It would be useful to generate a pdf form of the entire application for the applicants records once it is complete so they can check it before submission.
 
-[ ] Under source of funding, can we add the option of other so applicants can fill in information which is not included in the options, perhaps most questions with options should also have the choice to select for other.
+[x] Under source of funding, can we add the option of other so applicants can fill in information which is not included in the options, perhaps most questions with options should also have the choice to select for other.
 
-[ ] Under this section: Research ethics considerations in the research proposal - when the applicant's response is no, can we add a text for them to explain why they said no. 
+[x] Under this section: Research ethics considerations in the research proposal - when the applicant's response is no, can we add a text for them to explain why they said no. 
+* Added one field for all of the fields in question.
 
-[ ] On some of the options such as for vulnerable populations.... Does study involve vulnerable groups, no should be an option.
+[x] On some of the options such as for vulnerable populations.... Does study involve vulnerable groups, no should be an option.
+* Added none of the above.
 
 
 # Tasks
