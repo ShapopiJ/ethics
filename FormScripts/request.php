@@ -103,7 +103,8 @@ if ( isset($_POST['email']) && isset($_POST['unique_id'])) {
             
         }
         if (isset($_POST['edit'])){
-            echo('<h3>Please go to the following link for editing: </h3>');
+            echo('<h3>Redirecting...: </h3></br></br>');
+            
             echo('<script> window.location.href= "'.$redirect.'";</script>');
             //echo('<a href='.$redirect.'>HERE</a>');
             exit;
@@ -126,6 +127,7 @@ if (!isset($_POST['email'])) {
     echo('<input type="submit" value="Search">');
     echo('<input type="submit" name="edit" value="Edit">');
     echo('</form>');
+    echo('</br></br><h4 style="color: red;">Please note that all uploaded files must be re-uploaded when you edit your entry.</h4>');
 
 }
 ?>

@@ -46,3 +46,11 @@ This highlights work done on this project.
         * So I turned on "No Duplicates for Unique ID"
     - This however does not allow easypassthrough to work anymore.
     - Perhaps you must validate the duplication in the easypassthrough code snippet (gpedit)
+
+## Date 09/09/2021
+
+[x] Fix the field mapping for edits in easy passthrough. They are not properly matched.
+* Now properly matching
+
+# Tasks
+* Fix no duplicate functionality. Problem described in 03/09/2021
