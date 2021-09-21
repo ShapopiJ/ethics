@@ -78,7 +78,7 @@ Proposed solution:
 
 ### Comments by Prof. Davis:
 
-[ ] It would be useful to generate a pdf form of the entire application for the applicants records once it is complete so they can check it before submission.
+[x] It would be useful to generate a pdf form of the entire application for the applicants records once it is complete so they can check it before submission.
 
 [ ] Under source of funding, can we add the option of other so applicants can fill in information which is not included in the options, perhaps most questions with options should also have the choice to select for other.
 
