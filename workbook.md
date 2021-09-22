@@ -88,6 +88,7 @@ Proposed solution:
 [x] On some of the options such as for vulnerable populations.... Does study involve vulnerable groups, no should be an option.
 * Added none of the above.
 
+## Date 22/09/2021
 
 # Tasks
 * Fix no duplicate functionality. Problem described in 03/09/2021
