@@ -64,7 +64,7 @@ function get_feedback($feedback) {
                         Ethics is serious and we must do this carefully. Thank you for your patience.';
         $status = 'In Review';
         echo '<h3>Status: <span style="'.$style.'">'.$status.'</span></br></br></br>';
-        echo '<p style="border-style: solid;">'.$feedback_text.'</p>';
+        //echo '<p style="border-style: solid;">'.$feedback_text.'</p>';
     }
 
 
@@ -134,19 +134,52 @@ if (!isset($_POST['email'])) {
     if (isset($failure)) {
         echo('<h2 style="color: red;">'.$failure.'</h2>');
     }
+    
     echo('<h1>Please enter your information</h1>');
-    echo('<form method="POST">');
-    echo('<label for="email">Email</label>');
-    echo('<input type="text" name="email" id="email"></br>');
-    echo('<label for="unique_id">Unique ID</label>');
-    echo('<input type="text" name="unique_id" id="unique_id"></br>');
-    echo('<label for="pwd_edit">Password for Editing</label>');
-    echo('<input type="text" name="pwd_edit" id="pwd_edit"></br>');
-    echo('<input type="submit" value="Search">');
-    echo('<input type="submit" name="edit" value="Edit">');
-    echo('</form>');
-    echo('</br></br><h4 style="color: red;">Please note that all uploaded files must be re-uploaded when you edit your entry.</h4>');
+    echo '<table>';
 
+    echo('<form method="POST">');
+    echo '<tr>';
+
+        echo '<td>';
+            echo('<label for="email">Email</label>');
+        echo '</td>';
+
+        echo '<td>';
+            echo('<input type="text" name="email" id="email"></br>');
+        echo '</td>';
+    echo '</tr>';
+    echo '<tr>';
+        echo '<td>';
+            echo('<label for="unique_id">Unique ID</label>');
+        echo '</td>';
+
+        echo '<td>';
+            echo('<input type="text" name="unique_id" id="unique_id"></br>');
+        echo '</td>';
+    echo '</tr>';
+    echo '<tr>';
+        echo '<td>';
+            echo('<label for="pwd_edit">Password for Editing</label>');
+        echo '</td>';
+
+        echo '<td>';
+            echo('<input type="text" name="pwd_edit" id="pwd_edit"></br>');
+        echo '</td>';
+    echo '</tr>';
+    
+    echo '<tr>';
+        echo '<td>';
+            echo('<input type="submit" value="Search">');
+        echo '</td>';
+        echo '<td>';
+            echo('<input type="submit" name="edit" value="Edit">');
+        echo '</td>';
+    echo '</tr>';
+    echo('</form>');
+    
+    echo '</table>';
+    echo('</br></br><h4 style="color: red;">Please note that all uploaded files must be re-uploaded when you edit your entry.</h4>');
 }
 ?>
 

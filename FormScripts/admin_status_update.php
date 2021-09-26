@@ -65,11 +65,30 @@ if ($failure !== false){
 }
 echo('<h1>This page is for DEC and URECs only!</h1></br>');
 echo('<form method="POST">');
-echo('<label for="unique_id">Please enter the Unique id for the application</label>');
-echo('<input type="text" name="unique_id" id="unique_id"><br/>');
-echo('<label for="pwd">Password</label>');
-echo('<input type="password" name="pwd" id="pwd"><br/>');
+echo '<table>';
+echo '<tr>';
+    echo '<td>';
+        echo('<label for="unique_id">Please enter the Unique id for the application</label>');
+    echo '</td>';
+    echo '<td>';
+        echo('<input type="text" name="unique_id" id="unique_id"><br/>');
+    echo '</td>';
+echo '</tr>';
+
+echo '<tr>';
+    echo '<td>';
+        echo('<label for="pwd">Password</label>');
+    echo '</td>';
+    echo '<td>';
+        echo('<input type="password" name="pwd" id="pwd"><br/>');
+    echo '</td>';
+echo '</tr>';
+echo '<tr>';
+echo '<td>';
 echo('<input type="submit" value="Search">');
+echo '</td>';
+echo '<tr>';
+echo '</table>';
 echo('</form>');
 ?>
 
