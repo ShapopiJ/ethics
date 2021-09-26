@@ -88,7 +88,17 @@ Proposed solution:
 [x] On some of the options such as for vulnerable populations.... Does study involve vulnerable groups, no should be an option.
 * Added none of the above.
 
-## Date 22/09/2021
+## Date 23/09/2021
+
+[x] Fix the issue with the emailing going to junk.
+[x] Fix the issue of emails not arriving in mailbox of @unam.
+
+## Date 25/09/2021
+
+[x] Setup backup system
+* Backups will be uploaded to my gdrive
 
 # Tasks
 * Fix no duplicate functionality. Problem described in 03/09/2021
+* Move backups to microsoft onedrive
+    - This requires a PHP update on the server. Ask about this.
