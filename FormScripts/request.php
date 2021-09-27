@@ -51,9 +51,11 @@ function get_feedback($feedback) {
         //Output HTML
         
         echo '<h2> Your application was handled by '.$title. ' '.$fname. ' '.$lname . '</h2></br>';
-        echo '<h3>Status: <span style="'.$style.'">'.$status.'</span></br>';
-        echo '</br><h4> Here is your feedback:</h4>';
-        echo '<p style="border-style: solid;">'.$feedback_text.'</p></br></br>';
+        echo '<h3>Status: <span style="'.$style.'">'.$status.'</span></br></br>';
+        if ($feedback_text !== ''){ // If there is no feedback text dont add these lines.
+            echo '</br><h4> Specific Feedback:</h4>';
+            echo '<p style="border-style: solid;">'.$feedback_text.'</p></br></br>';
+        }
         if ($edit_entry!== ''){
             echo '<h1>You have been requested to edit your form. Please use the following password to edit the form: '.$edit_entry.' </h1>';
         }
