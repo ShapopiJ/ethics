@@ -66,7 +66,7 @@ function get_feedback($feedback) {
                         Ethics is serious and we must do this carefully. Thank you for your patience.';
         $status = 'In Review';
         echo '<h3>Status: <span style="'.$style.'">'.$status.'</span></br></br></br>';
-        //echo '<p style="border-style: solid;">'.$feedback_text.'</p>';
+        echo '<p style="border-style: solid;">'.$feedback_text.'</p>';
     }
 
 
