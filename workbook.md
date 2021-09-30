@@ -98,6 +98,10 @@ Proposed solution:
 [x] Setup backup system
 * Backups will be uploaded to my gdrive
 
+## Date 30/09/2021
+
+[x] Fix the exemption section conditional problem.
+
 # Tasks
 * Fix no duplicate functionality. Problem described in 03/09/2021
 * Move backups to microsoft onedrive
