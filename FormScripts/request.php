@@ -119,12 +119,16 @@ if ( isset($_POST['email']) && isset($_POST['unique_id'])) {
         if (isset($_POST['edit'])){
             
             //If the password matches the password given by the DEC redirect the applicant.
-            $admin_pwd = rgar($feedback, '6');
-            if ($_POST['pwd_edit'] == $admin_pwd){
-                echo('<h3>Redirecting...</h3></br></br>');
-                echo('<script> window.location.href= "'.$redirect.'";</script>');
-                //echo('<a href='.$redirect.'>HERE</a>');
-                exit;
+            if ($edit == 'Yes'){
+                if ($_POST['pwd_edit'] == $edit_password){
+                    echo('<h3>Redirecting...</h3></br></br>');
+                    echo('<script> window.location.href= "'.$redirect.'";</script>');
+                    //echo('<a href='.$redirect.'>HERE</a>');
+                    exit;
+                } else {
+                    $failure = "The DEC responsible has not yet given you permission to edit this form";
+                    unset($_POST);
+                }
             } else {
                 $failure = "The DEC responsible has not yet given you permission to edit this form";
                 unset($_POST);
