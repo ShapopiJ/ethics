@@ -34,8 +34,12 @@ function get_feedback($feedback) {
         $fname = rgar($feedback, '2.3');
         $lname = rgar($feedback, '2.6');
         $feedback_text = rgar($feedback, '5');
-        $edit_entry = rgar($feedback, '6');
-        $edit_entry = trim($edit_entry);
+
+        // Editing
+        $edit = rgar($feedback, '8');
+        $edit_password = rgar($feedback, '6');
+        $edit_password = trim($edit_password);
+
 
         //some styles
         
@@ -56,8 +60,10 @@ function get_feedback($feedback) {
             echo '</br><h4> Specific Feedback:</h4>';
             echo '<p style="border-style: solid;">'.$feedback_text.'</p></br></br>';
         }
-        if ($edit_entry!== ''){
-            echo '<h1>You have been requested to edit your form. Please use the following password to edit the form: '.$edit_entry.' </h1>';
+        if ($edit == 'Yes'){
+            if ($edit_password !== ''){
+                echo '<h1>You have been requested to edit your form. Please use the following password to edit the form: '.$edit_password.' </h1>';
+            }
         }
         return;
     } else {
