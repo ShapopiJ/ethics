@@ -102,7 +102,37 @@ Proposed solution:
 
 [x] Fix the exemption section conditional problem.
 
+## Date 14/10/2021
+
+[ ] Links should open in different tabs.
+- Unsuccefull
+[ ] Number all the fields.
+- Can't find a solution to this at the moment.
+
+## Date 18/10/2021
+[ ] Move backups to microsoft onedrive
+- This requires a PHP update on the server. Ask about this.
+- This cannot be accomplished this year. We can only do it when we recieve a new server.
+- Same for getting a AD with UNAM credentials.
+
+
+## Date 26/10/2021
+[x] Links should open in different tabs.
+[x] Fix "Go to Helpdesk button.
+[x] Say the reply should be ready withing 14 days.
+
+
 # Tasks
+
 * Fix no duplicate functionality. Problem described in 03/09/2021
+* Number all the fields.
+* Make the link sent, dynamically fill the Unique ID. 
+    - Make sure that when submitted it replaces any entry that is already in.
+    - Make this link also the default link sent to the DEC chairperson
+    - Use a get response and a dynamic fill on the Unique ID field.
+
+# Tasks 2022
+* Get AD with UNAM credentials
 * Move backups to microsoft onedrive
     - This requires a PHP update on the server. Ask about this.
+* Ethics Certificate

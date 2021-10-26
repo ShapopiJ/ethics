@@ -5,7 +5,7 @@ function details($title, $id){
     echo('Student/Staff Number: '.$id.'</br>');
 }
 
-function get_feedback($feedback) {
+function get_feedback($feedback, $date) {   #Takes the feedback entry and the expected date calulated from the entry date.
     $approved = 'background-color: green;
                     padding: 10px 10px 10px 10px;
                     border-radius: 5px;
@@ -34,6 +34,8 @@ function get_feedback($feedback) {
         $fname = rgar($feedback, '2.3');
         $lname = rgar($feedback, '2.6');
         $feedback_text = rgar($feedback, '5');
+
+        
 
         // Editing
         $edit = rgar($feedback, '8');
@@ -72,7 +74,9 @@ function get_feedback($feedback) {
                         Ethics is serious and we must do this carefully. Thank you for your patience.';
         $status = 'In Review';
         echo '<h3>Status: <span style="'.$style.'">'.$status.'</span></br></br></br>';
+        echo '<h4>You can expect to see a response by: '.$date. '</h4></br>';
         echo '<p style="border-style: solid;">'.$feedback_text.'</p>';
+        
     }
 
 
@@ -100,7 +104,7 @@ if ( isset($_POST['email']) && isset($_POST['unique_id'])) {
         $feedback = $feedback_entries[0];
         
         if (empty($entry)) {
-            //If email doesn't exist sent a message.
+            //If id doesn't exist sent a message.
             $failure ="Please check your ID again. That entry does not exist";
             unset($_POST);
         } else {
@@ -114,6 +118,11 @@ if ( isset($_POST['email']) && isset($_POST['unique_id'])) {
             $research_title = rgar($entry, '15');
             $id_no = rgar($entry, '4');
             //$test1 = var_dump($entries);
+
+            #get date
+            $date = rgar($entry, 'date_created'); #This is a string in format Y/m/d H:M:S
+            #$expected_date = getDate(strtotime($date));
+            $expected_date = date('Y-m-d', strtotime($date . '+ 14 days'));
             
         }
         if (isset($_POST['edit'])){
@@ -138,7 +147,7 @@ if ( isset($_POST['email']) && isset($_POST['unique_id'])) {
         echo('<h1> Welcome '.htmlentities($title).' '.htmlentities($name).' '.htmlentities($lname).'</h1>');
         details($research_title, $id_no);
         echo '</br></br>';
-        get_feedback($feedback);
+        get_feedback($feedback, $expected_date);
         }
     }
 }

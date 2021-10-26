@@ -17,6 +17,7 @@ if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
             $search['field_filters'][] = array('key' => '2', 'value' => $unique_id);
             $applications = GFAPI::get_entries('4', $search);
             $application = $applications[0];
+            $email = rgar($application, '7');
             
             if (empty($application)) {
                 $failure = 'That application ID does not exist please check again';
@@ -31,7 +32,7 @@ if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
                 if (empty($entry)){
                     //gravity_form(5,$field_values = array('1' => $unique_id));
                     echo('<h1></br>Redirecting...</h1>');
-                    $url = 'https://research.unam.edu.na/dec-admin';
+                    $url = 'https://research.unam.edu.na/dec-admin/?unique_id='.$unique_id.'&email='.$email;
                     echo('<script> window.location.href= "'.$url.'";</script>');
                     exit;
                 } else { //If it already exists, edit the existing
