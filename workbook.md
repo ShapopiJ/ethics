@@ -120,16 +120,16 @@ Proposed solution:
 [x] Links should open in different tabs.
 [x] Fix "Go to Helpdesk button.
 [x] Say the reply should be ready withing 14 days.
+[x] Make the link sent, dynamically fill the Unique ID. 
+- Make sure that when submitted it replaces any entry that is already in.
+- Use a get response and a dynamic fill on the Unique ID field.
 
 
 # Tasks
 
 * Fix no duplicate functionality. Problem described in 03/09/2021
+* Make link with get variables the default also the default link sent to the DEC chairperson
 * Number all the fields.
-* Make the link sent, dynamically fill the Unique ID. 
-    - Make sure that when submitted it replaces any entry that is already in.
-    - Make this link also the default link sent to the DEC chairperson
-    - Use a get response and a dynamic fill on the Unique ID field.
 
 # Tasks 2022
 * Get AD with UNAM credentials
