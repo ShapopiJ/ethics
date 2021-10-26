@@ -38,7 +38,7 @@ if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
                 } else { //If it already exists, edit the existing
                     echo('<h1></br>Redirecting...</h1>');
                     $ep_token = rgar($entry, 'fg_easypassthrough_token');
-                    $redirect = 'https://research.unam.edu.na/dec-admin/?ep_token='.$ep_token;
+                    $redirect = 'https://research.unam.edu.na/dec-admin/?ep_token='.$ep_token.'&email='.$email;
                     echo('<script> window.location.href= "'.$redirect.'";</script>');
                     exit;
                 }
