@@ -34,6 +34,7 @@ function get_feedback($feedback, $date) {   #Takes the feedback entry and the ex
         $fname = rgar($feedback, '2.3');
         $lname = rgar($feedback, '2.6');
         $feedback_text = rgar($feedback, '5');
+        $certificate = rgar($feedback, '9');    //Link to certificate
 
         
 
@@ -66,6 +67,9 @@ function get_feedback($feedback, $date) {   #Takes the feedback entry and the ex
             if ($edit_password !== ''){
                 echo '<h1>You have been requested to edit your form. Please use the following password to edit the form: '.$edit_password.' </h1>';
             }
+        }
+        if (!empty($certificate)){
+            echo '<h3>Download your certificate <a class="btn btn-success" href="'.$certificate.'" target="_blank">here</a></h3>';
         }
         return;
     } else {
@@ -126,7 +130,9 @@ if ( isset($_POST['email']) && isset($_POST['unique_id'])) {
             
         }
         if (isset($_POST['edit'])){
-            
+            $edit = rgar($feedback, '8');
+            $edit_password = rgar($feedback, '6');
+            $edit_password = trim($edit_password);
             //If the password matches the password given by the DEC redirect the applicant.
             if ($edit == 'Yes'){
                 if ($_POST['pwd_edit'] == $edit_password){

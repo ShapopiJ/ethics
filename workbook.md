@@ -106,6 +106,7 @@ Proposed solution:
 
 [ ] Links should open in different tabs.
 - Unsuccefull
+
 [ ] Number all the fields.
 - Can't find a solution to this at the moment.
 
@@ -124,15 +125,20 @@ Proposed solution:
 - Make sure that when submitted it replaces any entry that is already in.
 - Use a get response and a dynamic fill on the Unique ID field.
 
+## Date 9/11/2021
+
+[x] Ethics Certificate.
+[x] Start making a directory of all applications that were submitted.
+- Is there a way to make this directory show which are approved and declined?
 
 # Tasks
 
 * Fix no duplicate functionality. Problem described in 03/09/2021
 * Make link with get variables the default also the default link sent to the DEC chairperson
 * Number all the fields.
+* Supervisor Signatures.
 
 # Tasks 2022
-* Get AD with UNAM credentials
-* Move backups to microsoft onedrive
+* Get AD with UNAM credentials.
+* Move backups to microsoft onedrive.
     - This requires a PHP update on the server. Ask about this.
-* Ethics Certificate
