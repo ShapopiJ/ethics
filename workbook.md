@@ -128,8 +128,29 @@ Proposed solution:
 ## Date 9/11/2021
 
 [x] Ethics Certificate.
+
 [x] Start making a directory of all applications that were submitted.
 - Is there a way to make this directory show which are approved and declined?
+
+## Date 9/11/2021
+
+[x] Completed making of the directory.
+
+## Date 3/2/2022
+
+- Meeting with Ethics coordinators
+[x] change rejected -> "please attend to the comments and resubmit"
+[x] Add coordinators to notifications
+[x] Send stats to Du Preez
+[x] Change 14 day feedback -> Feedback will be given 14 days subject to the Decentralized Ethics Committe meeting. Please email ethics@unam.na to find out when the DEC will meet.
+
+## Date 3/3/2022
+
+[x] Add please make sure to use the correct DEC.
+[x] Send message to people who have approved applications.
+[ ] Please make sure supervisor has seen and approved your proposal.
+[x] Make required fields, CV, Resolution #, Proposal, research instruments.
+[ ] Dr. Ndeinoma Application.
 
 # Tasks
 
@@ -137,6 +158,9 @@ Proposed solution:
 * Make link with get variables the default also the default link sent to the DEC chairperson
 * Number all the fields.
 * Supervisor Signatures.
+* Make dashboard of statistics.
+* Students send multiple applications.
+* 
 
 # Tasks 2022
 * Get AD with UNAM credentials.

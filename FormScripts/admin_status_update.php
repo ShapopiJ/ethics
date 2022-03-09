@@ -4,6 +4,8 @@
 $form_id = 5; //form id
 $field_id_of_unique_id = 1;
 $failure = false;
+//setcookie('gp_easy_passthrough_session', "", time() - 3600);
+//$entry = NULL;
 if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
     if (strlen($_POST['unique_id']) < 1 || strlen($_POST['pwd']) < 1) {
         $failure = 'Please enter the ID and Password';
@@ -30,6 +32,7 @@ if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
 
 
                 if (empty($entry)){
+                    
                     //gravity_form(5,$field_values = array('1' => $unique_id));
                     echo('<h1></br>Redirecting...</h1>');
                     $url = 'https://research.unam.edu.na/dec-admin/?unique_id='.$unique_id.'&email='.$email;
@@ -39,6 +42,8 @@ if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
                     echo('<h1></br>Redirecting...</h1>');
                     $ep_token = rgar($entry, 'fg_easypassthrough_token');
                     $redirect = 'https://research.unam.edu.na/dec-admin/?ep_token='.$ep_token.'&email='.$email;
+                    //setcookie('gp_easy_passthrough_session', "", time() - 3600);
+                    //unset($_COOKIE["gp_easy_passthrough_session"]);
                     echo('<script> window.location.href= "'.$redirect.'";</script>');
                     exit;
                 }

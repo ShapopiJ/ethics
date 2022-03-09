@@ -5,7 +5,7 @@ function details($title, $id){
     echo('Student/Staff Number: '.$id.'</br>');
 }
 
-function get_feedback($feedback, $date) {   #Takes the feedback entry and the expected date calulated from the entry date.
+function get_feedback($feedback) {   #Takes the feedback entry
     $approved = 'background-color: green;
                     padding: 10px 10px 10px 10px;
                     border-radius: 5px;
@@ -44,12 +44,13 @@ function get_feedback($feedback, $date) {   #Takes the feedback entry and the ex
         $edit_password = trim($edit_password);
 
 
-        //some styles
+        //some styles and change word Declined to "resubmit"
         
         if ($status == 'Approved'){
                         $style = $approved;
                     } elseif ($status == 'Declined' ){
                         $style = $rejected;
+                        $status = 'Please attend to the comments and resubmit';
                     } elseif ($status == 'Forwarded to UREC') {
                         $style = $urec;
                     } else {
@@ -78,7 +79,7 @@ function get_feedback($feedback, $date) {   #Takes the feedback entry and the ex
                         Ethics is serious and we must do this carefully. Thank you for your patience.';
         $status = 'In Review';
         echo '<h3>Status: <span style="'.$style.'">'.$status.'</span></br></br></br>';
-        echo '<h4>You can expect to see a response by: '.$date. '</h4></br>';
+        echo '<h4>Feedback will be given 14 days subject to the Decentralized Ethics Committee meeting. Please email ethics@unam.na to find out when the DEC will meet.</h4></br>';
         echo '<p style="border-style: solid;">'.$feedback_text.'</p>';
         
     }
@@ -123,11 +124,13 @@ if ( isset($_POST['email']) && isset($_POST['unique_id'])) {
             $id_no = rgar($entry, '4');
             //$test1 = var_dump($entries);
 
+            #___________________________________________________________DEPRECATED CODE______________________________
             #get date
-            $date = rgar($entry, 'date_created'); #This is a string in format Y/m/d H:M:S
-            #$expected_date = getDate(strtotime($date));
-            $expected_date = date('Y-m-d', strtotime($date . '+ 14 days'));
-            
+            #$date = rgar($entry, 'date_created'); #This is a string in format Y/m/d H:M:S
+            #$expected_date = getDate(strtotime($date));        #Was never needed
+            #$expected_date = date('Y-m-d', strtotime($date . '+ 14 days'));
+            #________________________________________________________________________________________________________
+
         }
         if (isset($_POST['edit'])){
             $edit = rgar($feedback, '8');
@@ -153,7 +156,7 @@ if ( isset($_POST['email']) && isset($_POST['unique_id'])) {
         echo('<h1> Welcome '.htmlentities($title).' '.htmlentities($name).' '.htmlentities($lname).'</h1>');
         details($research_title, $id_no);
         echo '</br></br>';
-        get_feedback($feedback, $expected_date);
+        get_feedback($feedback);
         }
     }
 }
