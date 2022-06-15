@@ -1,4 +1,6 @@
 /*.docx
 /Ethics Orientation.odt
 /Forms
+/Stats/*.csv
+/Stats/*.xlsx
 .gitignore

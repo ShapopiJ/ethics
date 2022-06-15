@@ -4,8 +4,6 @@
 $form_id = 5; //form id
 $field_id_of_unique_id = 1;
 $failure = false;
-//setcookie('gp_easy_passthrough_session', "", time() - 3600);
-//$entry = NULL;
 if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
     if (strlen($_POST['unique_id']) < 1 || strlen($_POST['pwd']) < 1) {
         $failure = 'Please enter the ID and Password';
@@ -32,16 +30,8 @@ if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
 
 
                 if (empty($entry)){
-                    
                     //gravity_form(5,$field_values = array('1' => $unique_id));
                     echo('<h1></br>Redirecting...</h1>');
-                    //setcookie('gp_easy_passthrough_session','', time() - 1000);
-                    //setcookie('_lscache_vary','', time() - 1000);
-                    //if(isset($_COOKIE['gp_easy_passthrough_session'])) {
-                    //    echo "<script> console.log('I am in a new entry the session cookie should not be set'); </script>";
-                    //    echo "<script> console.log(".$_COOKIE['gp_easy_passthrough_session']."); </script>";
-                    //}
-                    
                     $url = 'https://research.unam.edu.na/dec-admin/?unique_id='.$unique_id.'&email='.$email;
                     echo('<script> window.location.href= "'.$url.'";</script>');
                     exit;
@@ -49,8 +39,6 @@ if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
                     echo('<h1></br>Redirecting...</h1>');
                     $ep_token = rgar($entry, 'fg_easypassthrough_token');
                     $redirect = 'https://research.unam.edu.na/dec-admin/?ep_token='.$ep_token.'&email='.$email;
-                    //setcookie('gp_easy_passthrough_session', "", time() - 3600);
-                    //unset($_COOKIE["gp_easy_passthrough_session"]);
                     echo('<script> window.location.href= "'.$redirect.'";</script>');
                     exit;
                 }
@@ -76,25 +64,6 @@ if (!isset($_POST['unique_id'])) {
 if ($failure !== false){
     echo '<h1 style="color:red;">'.htmlentities($failure).'</h1>';
 }
-//echo "<script> console.log('Test');</script>";
-if(isset($_COOKIE['gp_easy_passthrough_session'])) {
-   echo "<script> console.log('Deleting all cookies'); </script>";
-   // unset cookies
-    if (isset($_SERVER['HTTP_COOKIE'])) {
-        $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
-        foreach($cookies as $cookie) {
-            $parts = explode('=', $cookie);
-            $name = trim($parts[0]);
-            setcookie($name, '', time()-1000);
-            setcookie($name, '', time()-1000, '/');
-        }
-    }
-}
-/*if(isset($_COOKIE['gp_easy_passthrough_session'])) {
-    echo "<script> console.log('Deleting all cookies'); </script>";
-   // unset cookies
-   echo "<script> localStorage.clear(); </script>";
-}*/
 echo('<h1>This page is for DEC and URECs only!</h1></br>');
 echo('<form method="POST">');
 echo '<table>';

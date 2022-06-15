@@ -119,13 +119,9 @@ Proposed solution:
 
 ## Date 26/10/2021
 [x] Links should open in different tabs.
-
 [x] Fix "Go to Helpdesk button.
-
 [x] Say the reply should be ready withing 14 days.
-
 [x] Make the link sent, dynamically fill the Unique ID. 
-
 - Make sure that when submitted it replaces any entry that is already in.
 - Use a get response and a dynamic fill on the Unique ID field.
 
@@ -144,26 +140,13 @@ Proposed solution:
 
 - Meeting with Ethics coordinators
 [x] change rejected -> "please attend to the comments and resubmit"
-
 [x] Add coordinators to notifications
-
 [x] Send stats to Du Preez
-
 [x] Change 14 day feedback -> Feedback will be given 14 days subject to the Decentralized Ethics Committe meeting. Please email ethics@unam.na to find out when the DEC will meet.
 
-## Date 3/3/2022
+## Date 2/3/2022
 
-[x] Move backups to microsoft onedrive
-
-[x] Add please make sure to use the correct DEC.
-
-[x] Send message to people who have approved applications.
-
-[ ] Please make sure supervisor has seen and approved your proposal.
-
-[x] Make required fields, CV, Resolution #, Proposal, research instruments.
-
-[X] Dr. Ndeinoma Application.
+- I cannot register an app on MS Azure with my UNAM credentials. Access denied.
 
 # Tasks
 
@@ -171,9 +154,7 @@ Proposed solution:
 * Make link with get variables the default also the default link sent to the DEC chairperson
 * Number all the fields.
 * Supervisor Signatures.
-* Make dashboard of statistics.
-* Students send multiple applications.
-* 
+* Make dashboard of statistics
 
 # Tasks 2022
 * Get AD with UNAM credentials.
