@@ -3,4 +3,11 @@
 /Forms
 /Stats/*.csv
 /Stats/*.xlsx
+/Stats/*.pdf
 .gitignore
+/2024
+/*.html
+/*.jpg
+/*.pptx
+/*.pdf
+/*.fld
