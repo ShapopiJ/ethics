@@ -20,6 +20,13 @@ if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
             $applications = GFAPI::get_entries('4', $search);
             $application = $applications[0];
             $email = rgar($application, '7');
+            $email_sup = rgar($application, '30');
+            //$sup_name = rgar($application, '24');
+            $sup_title = rgar($application, '24.2');
+            $sup_fname = rgar($application, '24.3');
+            $sup_lname = rgar($application, '24.6');
+            $student_num = rgar($application, '4');
+            $r_title = rgar($application, '15');
             
             if (empty($application)) {
                 $failure = 'That application ID does not exist please check again';
@@ -42,13 +49,15 @@ if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
                     //    echo "<script> console.log(".$_COOKIE['gp_easy_passthrough_session']."); </script>";
                     //}
                     
-                    $url = 'https://research.unam.edu.na/dec-admin/?unique_id='.$unique_id.'&email='.$email;
+                    $url = 'https://research.unam.edu.na/dec-admin/?unique_id='.$unique_id.'&email='.$email.'&email_sup='.$email_sup.'&student_num='.$student_num.'&r_title='.$r_title;
+                    //$url = 'https://research.unam.edu.na/dec-admin/?unique_id='.$unique_id.'&email='.$email.'&email_sup='.$email_sup.'&sup_title='.$sup_title.'&sup_fname='.$sup_fname.'&sup_lname='.$sup_lname;
                     echo('<script> window.location.href= "'.$url.'";</script>');
                     exit;
                 } else { //If it already exists, edit the existing
                     echo('<h1></br>Redirecting...</h1>');
                     $ep_token = rgar($entry, 'fg_easypassthrough_token');
-                    $redirect = 'https://research.unam.edu.na/dec-admin/?ep_token='.$ep_token.'&email='.$email;
+                    $redirect = 'https://research.unam.edu.na/dec-admin/?ep_token='.$ep_token.'&email='.$email.'&email_sup='.$email_sup.'&student_num='.$student_num.'&r_title='.$r_title;
+                    //$redirect = 'https://research.unam.edu.na/dec-admin/?ep_token='.$ep_token.'&email='.$email.'&email_sup='.$email_sup.'&sup_title='.$sup_title.'&sup_fname='.$sup_fname.'&sup_lname='.$sup_lname;
                     //setcookie('gp_easy_passthrough_session', "", time() - 3600);
                     //unset($_COOKIE["gp_easy_passthrough_session"]);
                     echo('<script> window.location.href= "'.$redirect.'";</script>');
