@@ -27,7 +27,10 @@ if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
             $sup_lname = rgar($application, '24.6');
             $student_num = rgar($application, '4');
             $r_title = rgar($application, '15');
+            $r_title = str_replace(array("\r", "\n", "\r\n"), ' ', $r_title);
+            echo "<script> console.log(".$r_title."); </script>";
             
+
             if (empty($application)) {
                 $failure = 'That application ID does not exist please check again';
             } else {
@@ -56,7 +59,7 @@ if (isset($_POST['unique_id']) && isset($_POST['pwd'])){
                 } else { //If it already exists, edit the existing
                     echo('<h1></br>Redirecting...</h1>');
                     $ep_token = rgar($entry, 'fg_easypassthrough_token');
-                    $redirect = 'https://research.unam.edu.na/dec-admin/?ep_token='.$ep_token.'&email='.$email.'&email_sup='.$email_sup.'&student_num='.$student_num.'&r_title='.$r_title;
+                    $redirect = 'https://research.unam.edu.na/dec-admin/?ep_token='.$ep_token;//.'&email='.$email.'&email_sup='.$email_sup.'&student_num='.$student_num.'&r_title='.$r_title;
                     //$redirect = 'https://research.unam.edu.na/dec-admin/?ep_token='.$ep_token.'&email='.$email.'&email_sup='.$email_sup.'&sup_title='.$sup_title.'&sup_fname='.$sup_fname.'&sup_lname='.$sup_lname;
                     //setcookie('gp_easy_passthrough_session', "", time() - 3600);
                     //unset($_COOKIE["gp_easy_passthrough_session"]);
@@ -132,4 +135,3 @@ echo '<tr>';
 echo '</table>';
 echo('</form>');
 ?>
-
